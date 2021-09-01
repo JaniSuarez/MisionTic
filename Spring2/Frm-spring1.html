@@ -9,7 +9,8 @@
 	<header>
 		<h1 style="color: black ;">FORMULARIO DE REGISTRO PARA CALCULAR EL IMC</h1>
 		<h1 style="color: black ;">IMC: Indice de Masa Corporal</h1>
-		<em>Cuidamos <b>de</b> su <b>Salud</b></em>
+		<h2 style="color: black ;"><em>Cuidamos de su Salud</em></h2>
+		
 
 	<hr>
 	</header>
@@ -20,6 +21,26 @@
 					<label for="name">Hola, Registre su Nombre Completo:</label>
 					<input type="text" id="name" name="user_name" />
 				</br>
+				<p>Seleccione la Comunidad de la UNAB:</p>
+				<div>
+				  <input type="radio" id="estudiante" name="comunidad" value="estudiante"
+						 checked>
+				  <label for="estudiante">Estudiante</label>
+				</div>
+
+				<div>
+				  <input type="radio" id="egresado" name="comunidad" value="egresado">
+				  <label for="egresado">Egresado</label>
+				</div>
+
+				<div>
+				  <input type="radio" id="docente" name="comunidad" value="docente">
+				  <label for="docente">Docente</label>
+				</div>
+				<div>
+				  <input type="radio" id="adminunab" name="comunidad" value="adminunab">
+				  <label for="adminunab">Administrativo</label>
+				</div>
 				<p>
 				  <label for="Genero">
 					<span>Genero:</span>
@@ -35,10 +56,17 @@
 					<input type="email" id="mail" name="user_mail" />
 				</p>
 				<p>
-					<label for="mail">Edad:</label>
+					<label for="edad">Edad:</label>
 					<input type="text" id="edad" name="user_edad" />
 				</p>
-				
+				<p>
+					<label for="estatura">Estatura:</label>
+					<input type="number" id="estatura" name="user_estatura" />
+				</p>
+				<p>
+					<label for="peso">Peso:</label>
+					<input type="number" id="peso" name="user_peso" />
+				</p>
 				<br class="button">
 					<button type="submit">Calcule su IMC</button>
 				</br>
