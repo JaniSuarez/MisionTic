@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Primer Formulario Grupo STRONG-TEAM</title>
+		<title>FRM Grupo7 STRONG-TEAM</title>
 	</head>
 
-	<body>
+	<body bgcolor= "#98FB98">
 	<header>
 		<h1 style="color: black ;">FORMULARIO DE REGISTRO PARA CALCULAR EL IMC</h1>
 		<h1 style="color: black ;">IMC: Indice de Masa Corporal</h1>
@@ -17,22 +17,23 @@
 
 		<form action="/my-handling-form-page" method="post">
 			<ul>
+				<p>
+				Es importante recordar que si bien es bueno conocer su valor de IMC, siempre se debe consultar con un profesional de la salud. Si se desea una mejor orientación o realizarse una evaluación nutricional más profunda, acuda a un nutricionista o personal médico. El Índice de Masa Corporal (IMC), también conocido como índice de Quetelet, es el resultado de la división del peso expresado en kilogramos, entre el cuadrado de la talla expresado en metros. La calculadora relaciona ambos parámetros dando como resultado una cifra, llamada Índice de Masa Corporal expresada en kg/m2, la cual mediante una tabla se puede interpretar el resultado, averiguando si la persona se encuentra con peso normal, o si por el contrario se encuentra con sobrepeso, obesidad o delgadez.
+				</p>
+			
 				<br>
 					<label for="name">Hola, Registre su Nombre Completo:</label>
 					<input type="text" id="name" name="user_name" />
 				</br>
 				<p>Seleccione la Comunidad de la UNAB:</p>
 				<div>
-				  <input type="radio" id="estudiante" name="comunidad" value="estudiante"
-						 checked>
+				  <input type="radio" id="estudiante" name="comunidad" value="estudiante" checked>
 				  <label for="estudiante">Estudiante</label>
 				</div>
-
 				<div>
 				  <input type="radio" id="egresado" name="comunidad" value="egresado">
 				  <label for="egresado">Egresado</label>
 				</div>
-
 				<div>
 				  <input type="radio" id="docente" name="comunidad" value="docente">
 				  <label for="docente">Docente</label>
@@ -70,6 +71,32 @@
 				<br class="button">
 					<button type="submit">Calcule su IMC</button>
 				</br>
+				<br >
+				<!--tabla resultados IMC clase 03/09 -->
+				<table border ="1">
+				  <tr>
+					<th>Cálculo IMC</th>
+					<th>Escala</th>
+					<th>Resultado</th>
+				  </tr>
+				  <tr>
+					<td>18.5</td>
+					<td>18.5 - 24.9</td>
+					<td>Normal, por lo que debererías seguir un plan encaminado a obtener un peso apto para ti y una correcta nutrición. </td>
+				  </tr>
+				</table>
+				<br />
+				<!--tabla planes de recomendaciones IMC clase 03/09 -->  
+				<table border ="2">
+				  <tr>
+					<th>Plan Alimentación</th>
+					<th>Plan Ejercicios</th>
+				  </tr>
+				  <tr>
+					<td>Para empezar, con papel y lápiz en mano, haga una lista de sus comidas favoritas. Puede ser útil hablar con la familia u hojear su recetario favorito. Algunas de las comidas serán más saludables que otras, pero por ahora, solo anótelas en la lista.</td>
+					<td>Los estudios indican que la gente se siente llena por la cantidad de comida que come, no por las calorías que consume. Usted puede rebajar las calorías de sus comidas favoritas recortando la cantidad de grasas o aumentando el contenido de ingredientes ricos en fibra, como frutas o verduras.</td>
+				  </tr>
+				</table>
 			</ul>
 		</form>
 	</body>
