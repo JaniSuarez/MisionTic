@@ -16,7 +16,9 @@ h1 {
 p {
   color: red;
 }
-
+div {
+  color: red;
+}
 input[type=text] {
   border: 2px solid red;
   border-radius: 4px;
@@ -47,4 +49,7 @@ button:hover {
   background-color: #4CAF50; /* Green */
   color: white;
 }
-
+.center {
+			text-align: center;
+			color: blue;
+		}
