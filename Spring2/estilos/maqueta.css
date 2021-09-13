@@ -1,0 +1,15 @@
+encabezado{
+	width: 100%;
+	
+}
+principal{
+	width: 69%;
+	float : left;
+}
+menu{
+	width: 29%;
+	float : left;
+}
+pie{
+	width: 100%;
+}
