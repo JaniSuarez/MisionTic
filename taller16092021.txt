@@ -1,0 +1,193 @@
+1. diferencia entre var y let
+Definir múltiples variables con el mismo nombre
+El uso de var permite redefinir la misma variable en el mismo bloque, algo que no se puede hacer con let. Por ejemplo, el siguiente código función sin problemas:
+
+var x = 1;
+var x = 2;
+Mientras que su versión con let produce un error.
+
+let x = 1;
+let x = 2;
+Aún así en diferentes bloques si que es posible definir múltiples variables con el mismo nombre con let. Siendo cada una de ellas una variable diferente. Algo que se puede ver en el siguiente bloque de código.
+
+let x = 1;
+if (true) {
+    let x = 2;
+    console.log(x);
+}
+console.log(x);
+2
+1
+En el bloque del if la variable x tiene como valor 2, mientras que fuera tiene el valor 1. Si dentro del bloque no se define la variable está conservará el valor al salir.
+
+En el caso de var siempre se conserva el valor ya que el rango de definición es la función, no el bloque.
+
+var x = 1;
+if (true) {
+    var x = 2;
+    console.log(x);
+}
+console.log(x);
+2
+2
+
+2. tipos de datos
+Number, números como; 1, 0, 18500, 89.95124
+BigInt, agregado en el 2020, para representar números enteros muy, pero muy grandes, 99999999999999n
+String, cadena de caracteres como 'Hola' y "Buenas noches".
+Boolean, solo acepta true o false, es decir, si o no.
+null, sirve para indicar que algo es nada, su único valor es null.
+undefined, sirva para indicar que algo aún no está definido.
+Symbol, agregado en el 2015, con EcmaScript 6
+
+3. Qué es JSON
+
+4. Qué operaciones tenemos dentro del lenguaje
+
+https://jsfiddle.net/   //plataforma de ejecucion
+
+Haciendo uso de prompt, recibir el nombre del usuario y mostrarlo en la consola.
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Taller 16-09</title>
+</head>
+<body>
+
+<h1>taller 16 Sept</h1>
+<p>Grupo 7</p>
+<script>
+let name=prompt("ingresa su nombre :");
+console.log("su nombre es: "+name);
+</script>
+
+</body>
+</html>
+
+Haciendo uso de alert, mostrar un mensaje al usuario.
+
+
+3. <!DOCTYPE html>
+<html>
+<head>
+<title>Taller 16-09</title>
+</head>
+<body>
+
+<h1>taller 16 Sept</h1>
+<p>Grupo 7</p>
+<script>
+let n1=prompt("ingresa numero :");
+if (n1 > 0)
+ console.log("el numero es mayor");
+ else
+ console.log("el numero es menor");
+</script>
+
+</body>
+</html>
+
+Recibir dos números del usuario, por consola: mostrar la suma, resta, multiplicación y división aplicada entre los dos números ingresados.
+<!DOCTYPE html>
+<html>
+<head>
+<title>Taller 16-09</title>
+</head>
+<body>
+
+<h1>taller 16 Sept</h1>
+<p>Grupo 7</p>
+<script>
+let n1=prompt("ingresa numero n1 :");
+let n2=prompt("ingresa numero n2 :");
+let s= parseInt(n1) + parseInt(n2);
+let y= parseInt(n1) - parseInt(n2);
+let m= parseInt(n1) * parseInt(n2);
+let d= parseInt(n1) / parseInt(n2);
+
+console.log("suma :"+s);
+console.log("resta :"+y);
+console.log("multiplicacion :"+m);
+console.log("division :"+d);
+</script>
+
+</body>
+</html>
+
+Recibir dos números y una opción del usuario, dependiendo de la opción recibida se va a realizar una de las operaciones aritméticas: suma, resta, multiplicación, división, potencia, radicación. Mostrar el resultado al usuario en un alert.
+
+
+
+Calcular la edad 
+let fechanacimiento = new Date(prompt("Ingrese Fecha de nacimiento DD/MM/YYYY:"));
+let actual = new Date();
+let edad = actual.getFullYear() - fechanacimiento.getFullYear();
+
+console.log(+edad);
+
+Recibiendo la edad del usuario, mostrar un mensaje diciendo si es menor, mayor de edad o un adulto mayor.
+let edad = parseInt(prompt("Ingrese edad:"));
+
+if (edad > 18 && edad <= 60){
+ console.log("Mayor de edad");
+ }
+ else if (edad > 60){
+   console.log("Adulto Mayor");
+  }
+  else 
+   console.log("Menor de Edad");
+
+Recibiendo el nombre completo del usuario reconocer la cantidad de letras que contiene el nombre, mostrar el resultado por consola.
+let name = prompt("Ingrese NOMBRE COMPLETO:");
+
+console.log("la cantidad de letras es "+name.length);
+
+Haciendo uso de let generar un error de variable no declarada o inicializada.
+
+prompt("Ingrese NOMBRE COMPLETO:");
+console.log("la cantidad de letras es "+algo.length);
+
+Rpta: "<a class='gotoLine' href='#54:41'>54:41</a> Uncaught ReferenceError: algo is not defined"
+
+Haciendo uso de var generar un error de variable no definida.
+var  = prompt("Ingrese NOMBRE COMPLETO:");
+console.log("la cantidad de letras es "+algo.length);
+
+Rpta:"<a class='gotoLine' href='#52:6'>52:6</a> Uncaught SyntaxError: Unexpected token '='"
+
+Recibir números por prompt, negativos o positivos, si se ingresa un cero (0) detener el ingreso de números y escribir en consola cuántos de los números ingresados son positivos y cuántos son negativos.
+var positivo = 0;
+var negativo = 0;
+do {
+var numero = parseInt(prompt("Ingrese numeros, para detener con Cero:"));
+  if (numero > 0){
+    positivo++;
+  }else if(numero < 0){
+    negativo++;
+  }
+} while (numero != 0);
+
+console.log("cantidad de postivos :"+positivo);
+console.log("cantidad de negativos :"+negativo);
+
+Recibir una lista de nombres separados por espacio, mostrar en consola solo los nombres que tengan más de 6 caracteres.
+var cadena=prompt("Ingrese palabras con espacio: ");
+ncad=cadena.split(' ');
+var cont = 0;
+var cont2 = 0;
+var arreglo=[];
+for (i=0; i< ncad.length; i++ ){
+
+ if(ncad[i].length >= 6){
+  cont++;
+  arreglo.push(ncad[i]);
+ }
+}
+
+console.log(ncad);
+console.log(cont);
+console.log("Palabras con 6 caracteres:"+arreglo);
+
+
+
