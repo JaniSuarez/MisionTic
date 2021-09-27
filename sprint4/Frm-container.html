@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>FRM Grupo7 STRONG-TEAM</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="estilos/estilos.css">
+		<script type="text/javascript" src="imc.js"></script>
+		<!--Load the AJAX API-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+
+		  // Load the Visualization API and the corechart package.
+		  google.charts.load('current', {'packages':['corechart']});
+
+		  // Set a callback to run when the Google Visualization API is loaded.
+		  google.charts.setOnLoadCallback(drawChart);
+
+		  // Callback that creates and populates a data table,
+		  // instantiates the pie chart, passes in the data and
+		  // draws it.
+		  function drawChart() {
+
+			// Create the data table.
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Comunidad');
+			data.addColumn('number', 'Registros');
+			data.addRows([
+			  ['Estudiantes', 30],
+			  ['Administrativo', 12],
+			  ['Egresado', 18],
+			  ['Docente', 16]
+			]);
+
+			// Set chart options
+			var options = {'title':'Datos de Usuarios Registrados',
+						   'width':600,
+						   'height':500,
+						   'is3D':true,
+						   'legend':'left'};
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+		  }
+		</script>
+	</head>
+	
+	<body>
+	<div class="container">
+		<div class="encabezado"> 
+			<header>
+				<h1 class="text-center" style="color: black ;">FORMULARIO DE REGISTRO PARA CALCULAR SU IMC</h1>
+				<h1 class="text-center" style="color: black ;">IMC: Indice de Masa Corporal</h1>
+				<h2 class="text-end" style="--bs-text-opacity: .5;"><em>Cuidamos de su Salud</em></h2>
+				<div class="col-12 text-end">
+					<button class="btn btn-primary" type="submit">Bienestar Universitario</button>
+				</div>
+			<hr>
+			</header>
+		</div> <!--termina clase encabezado -->
+		<div class="principal"> 
+			<form action="/my-handling-form-page" method="post">
+			<ul>
+				<p class="user-select-none">
+				Es importante recordar que si bien es bueno conocer su valor de IMC, siempre se debe consultar con un profesional de la salud. Si se desea una mejor orientación o realizarse una evaluación nutricional más profunda, acuda a un nutricionista o personal médico. El Índice de Masa Corporal (IMC), también conocido como índice de Quetelet, es el resultado de la división del peso expresado en kilogramos, entre el cuadrado de la talla expresado en metros. La calculadora relaciona ambos parámetros dando como resultado una cifra, llamada Índice de Masa Corporal expresada en kg/m2, la cual mediante una tabla se puede interpretar el resultado, averiguando si la persona se encuentra con peso normal, o si por el contrario se encuentra con sobrepeso, obesidad o delgadez.
+				</p>
+				
+			</ul>	
+			</form>	
+		</div> <!--termina clase principal -->
+		
+		<div class="menu"> 
+			<form class="row g-3 needs-validation" novalidate onsubmit="myFunction()" >
+				
+					<label for="name">Por favor, Registre la siguiente información:</label><br>
+					<div class="col-md-3">
+						<label for="validationCustom01" class="form-label">Nombres</label>
+						<input type="text" class="form-control" id="validationCustom01" placeholder="Nombres" required>
+						<div class="valid-feedback">Completado!</div>
+   				    </div>
+					<div class="col-md-3">
+						<label for="validationCustom02" class="form-label">Apellidos</label>
+						<input type="text" class="form-control" id="validationCustom02" placeholder="Apellidos" required>
+						<div class="valid-feedback">Completado!</div>
+					</div>
+				
+					<div class="col-md-4">
+						<label for="validationCustomUseremail" class="form-label">Correo</label>
+						<div class="input-group has-validation">
+							<span class="input-group-text" id="inputGroupPrepend">@</span>
+							<input type="email" class="form-control" id="validationCustomUseremail" placeholder="usuario@o365.unab.edu.co" aria-describedby="inputGroupPrepend" required>
+							<div class="invalid-feedback">Ingresa un correo!</div>
+						</div>
+					</div>
+				<!--radios en bootstrap -->
+				<fieldset class="row mb-3">
+					<legend class="col-form-label col-sm-2 pt-0">Comunidad en la UNAB:</legend>
+					<div class="col-sm-10">
+					  <div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+						<label class="form-check-label" for="gridRadios1">
+						  Estudiante
+						</label>
+					  </div>
+					  <div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+						<label class="form-check-label" for="gridRadios2">
+						  Egresado
+						</label>
+					  </div>
+					  <div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+						<label class="form-check-label" for="gridRadios3">
+						  Docente
+						</label>
+					  </div>
+					  <div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+						<label class="form-check-label" for="gridRadios4">
+						  Administrativo
+						</label>
+					  </div>
+					</div>
+				</fieldset>
+				
+				<div class="input-group mb-3">
+				  <label class="input-group-text" for="inputGroupSelect01">Genero :</label>
+				  <select class="col-auto" id="inputGroupSelect01">
+					<option selected disabled value="">Lista de Opciones</option>
+					<option value="F">Femenino</option>
+					<option value="M">Masculino</option>
+					<option value="ND">No-Definido</option>
+				  </select>
+				</div>
+				<div class="col-md-2">
+					<label for="validationCustom03" class="form-label">Edad</label>
+					<input type="text" class="form-control" id="validationCustom03" name="edad" min="5" max="90" maxlength="2" size="2" required>
+					<div class="invalid-feedback">* Campo Obligatorio *</div>
+					
+				</div>
+				<div class="col-md-2">
+					<label for="txtaltura" class="form-label">Estatura</label>
+					<input type="text" class="form-control" id="txtaltura" maxlength="4" size="4"  pattern="[0-9]{3}" required>
+					<div class="invalid-feedback">* Campo Obligatorio *</div>
+			    </div>
+				<div class="col-md-2">
+					<label for="txtpeso" class="form-label">Peso Kg</label>
+					<input type="text" class="form-control" id="txtpeso" maxlength="3" size="3" pattern="[0-9]{3}" required>
+					<div class="invalid-feedback">* Campo Obligatorio *</div>
+			    </div>
+				<div class="col-12">
+					<button class="btn btn-primary" id="btnCalcular" onclick="calcularimc()" >Calcule su IMC</button>
+				</div>
+				<!--Div that will hold the pie chart-->
+				<div id="chart_div"></div>
+			</form>	
+		</div>	<!--termina clase menu -->	
+		<div class="col-md-6">
+			<div class="table-responsive">
+			<table id="imc_table" class="table table-bordered table-sm">
+			<thead>
+			<tr>
+			<th scope="col">IMC</th>
+			<th scope="col">Nivel de peso</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr id="15oM">
+			<td>Por debajo de 15</td>
+			<td>Delgadez Muy Severa</td>
+			</tr>
+			<tr id="DelgadezS">
+			<td>15 - 15,9</td>
+			<td>Delgadez Severa</td>
+			</tr>
+			<tr id="Delgadez">
+			<td>16 - 18,5</td>
+			<td>Delgadez</td>
+			</tr>
+			<tr id="PesoS">
+			<td>18,5 y superior</td>
+			<td>Normal</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+		</div>		
+		<div class="pie"> 
+				<p>
+				
+				
+				</p>
+				<img src="plugin-imc-reto1.jpg" alt="Rangos de IMC" class="img-fluid" alt="Responsive image"">
+				
+				<!--tabla modificado CSS IMC clase 03/09 -->
+				<table class="table table-bordered border-info">
+				  <thead>	
+				  <tr>
+					<th scope="col">Cálculo IMC</th>
+					<th scope="col">Escala</th>
+					<th scope="col">Resultado</th>
+				  </tr>
+				  </thead>
+				  <tbody>
+					<tr class="table-primary">
+					<td>18.5</td>
+					<td>18.5 - 24.9</td>
+					<td>Normal, por lo que debererías seguir un plan encaminado a obtener un peso apto para ti y una correcta nutrición. </td>
+					</tr>
+				  </tbody>
+				</table>
+				
+				
+			
+				<!--tabla planes de recomendaciones IMC clase 03/09 -->  
+				<table class="table table-bordered border-warning">
+				  <thead>	
+				  <tr>
+					<th scope="col">Plan Alimentación</th>
+					<th scope="col">Plan Ejercicios</th>
+				  </tr>
+				  </thead>
+				  <tbody>
+				  <tr class="table-warning">
+					<td>Para empezar, con papel y lápiz en mano, haga una lista de sus comidas favoritas. Puede ser útil hablar con la familia u hojear su recetario favorito. Algunas de las comidas serán más saludables que otras, pero por ahora, solo anótelas en la lista.</td>
+					<td>Los estudios indican que la gente se siente llena por la cantidad de comida que come, no por las calorías que consume. Usted puede rebajar las calorías de sus comidas favoritas recortando la cantidad de grasas o aumentando el contenido de ingredientes ricos en fibra, como frutas o verduras.</td>
+				  </tr>
+				</table>
+		</div>	<!--termina clase pie -->
+	</div> <!--termina clase container -->
+	
+	</body>
+	<pre>
+	<div class="shadow p-3 mb-5 bg-body rounded text-center" >C3-G15-Desarrollo de Software, Misión Tic 2022- UNAB - Grupo7	
+	<em>Visita <em> <a href="https://misiontic2022.unab.edu.co">MisionTIC.</a><em>
+	</div>
+	</pre>
+
+</html>
