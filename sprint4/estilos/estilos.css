@@ -27,6 +27,28 @@ p.user-select-none {
   text-align: justify;
   margin-left: -0.85cm;
 }
+
+
+.tablafila2{
+  vertical-align: middle;
+  
+ 
+}
+#imc-tabla{
+  width: 107px;
+  text-align: center;
+  
+}
+
+#escala-tabla{
+  text-align: center;
+}
+
+#scale{
+  text-align: center;
+  width: 92px;
+}
+
 		
 		
 
